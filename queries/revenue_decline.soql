@@ -1,0 +1,7 @@
+SELECT Name, Region__c, Age_Group__c,
+       Last_Year_Revenue__c, This_Year_Revenue__c,
+       Email_Open_Rate__c, Funnel_Stage__c, Customer_Segment__c
+FROM Account
+WHERE Last_Year_Revenue__c > 0
+AND This_Year_Revenue__c < Last_Year_Revenue__c
+ORDER BY Last_Year_Revenue__c DESC

@@ -1,0 +1,7 @@
+SELECT Funnel_Stage__c, COUNT(Id) account_count,
+       SUM(Last_Year_Revenue__c) last_yr_rev,
+       SUM(This_Year_Revenue__c) this_yr_rev
+FROM Account
+WHERE Last_Year_Revenue__c > 0
+GROUP BY Funnel_Stage__c
+ORDER BY COUNT(Id) DESC

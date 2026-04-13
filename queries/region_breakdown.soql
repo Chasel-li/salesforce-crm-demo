@@ -1,0 +1,8 @@
+SELECT Region__c,
+       SUM(Last_Year_Revenue__c) last_yr,
+       SUM(This_Year_Revenue__c) this_yr,
+       AVG(Email_Open_Rate__c) avg_open_rate
+FROM Account
+WHERE Last_Year_Revenue__c > 0
+GROUP BY Region__c
+ORDER BY SUM(Last_Year_Revenue__c) DESC
